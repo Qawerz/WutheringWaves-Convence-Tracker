@@ -1,5 +1,6 @@
-# WutheringWaves_pulls_tracker
-A simple python script that shows the number of pulls you've made
+# WutheringWaves Convence Tracker
+A simple python script that shows the number of pulls you've made in the termial
+
 
 ## How to get a link?
 1. Log in to the game.
