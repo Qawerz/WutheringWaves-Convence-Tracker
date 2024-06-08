@@ -9,7 +9,7 @@ os.system('cls')
 
 config = {
     # place path to your log file dir 
-    "path_to_log": "PATH\TO\LOG\DIR"    
+    "path_to_log": "O:\Epic Games\WutheringWavesj3oFh\Wuthering Waves Game\Client\Saved\Logs"    
 }
 
 clear = lambda: os.system('cls')
@@ -30,7 +30,7 @@ parser.add_argument(
     '--auto_link',
     type=bool,
     default=False,
-    help='auto link'
+    help='Auto link find. Change config var in code before using (default: 0)'
 )
 
 args = parser.parse_args()
@@ -162,6 +162,3 @@ if utilitydata['five_star'] > 0:
     print(f"Average 5* Pity - {int(utilitydata['five_star_pull']/utilitydata['five_star'])}")
 if utilitydata['four_star'] > 0:
     print(f"Average 4* Pity - {int(utilitydata['four_star_pull']/utilitydata['four_star'])}")
-    
-    #test git
-    
