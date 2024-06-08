@@ -3,9 +3,19 @@ import urllib.request
 import http.client
 import argparse
 import os
+import re
+
+os.system('cls')
+
+config = {
+    # place path to your log file dir 
+    "path_to_log": "PATH\TO\LOG\DIR"    
+}
 
 clear = lambda: os.system('cls')
 clear()
+
+convenceURL = ""
 
 parser = argparse.ArgumentParser()
 parser.add_argument(
@@ -15,11 +25,29 @@ parser.add_argument(
     default=0,
     help='no skip three star pulls (default: 1)'
 )
+parser.add_argument(
+    '-a',
+    '--auto_link',
+    type=bool,
+    default=False,
+    help='auto link'
+)
+
 args = parser.parse_args()
 
 clear()
-convenceURL = input("Paste here URl from Client/Logs/Client.txt: ")
-
+if not args.auto_link:
+    convenceURL = input("Paste here URl from Client/Logs/Client.txt: ")
+else:
+    
+    with open(f'{config['path_to_log']}\Client.log', 'r', encoding='utf-8') as f:
+        for line in f:
+            try:
+                # print(line)
+                convenceURL = re.search("(?P<url>https?://[^\s]+)", line).group("url").split("\",\"")[0]
+                print(convenceURL)
+            except AttributeError:
+                pass
 clear()
 
 
