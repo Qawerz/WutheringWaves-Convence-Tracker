@@ -9,7 +9,7 @@ os.system('cls')
 
 config = {
     # place path to your log file dir 
-    "path_to_log": "O:\Epic Games\WutheringWavesj3oFh\Wuthering Waves Game\Client\Saved\Logs"    
+    "path_to_log": "PATH\TO\LOG\DIR"    
 }
 
 clear = lambda: os.system('cls')
@@ -162,6 +162,4 @@ if utilitydata['five_star'] > 0:
     print(f"Average 5* Pity - {int(utilitydata['five_star_pull']/utilitydata['five_star'])}")
 if utilitydata['four_star'] > 0:
     print(f"Average 4* Pity - {int(utilitydata['four_star_pull']/utilitydata['four_star'])}")
-    
-    # test
     
